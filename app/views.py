@@ -2,6 +2,11 @@ from flask import Flask, render_template, redirect, url_for, request, session, a
 
 from app import app
 
+
+@app.route('/recommend/<userid>')
+def get_recommendation_by_userid(userid:int):
+    return "userId is: {}, movie: x,y,z".format(userid)
+
 @app.route('/')
 def index():
     if not session.get('logged_in'):
