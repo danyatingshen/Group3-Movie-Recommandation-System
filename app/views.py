@@ -14,7 +14,7 @@ algo = pkl.load(open(MODEL_PATH, 'rb')) #load these files in the Virtual Machine
 def get_recommendation_by_userid(userid:int):
     #return "userId is: {}, movie: x,y,z".format(userid)
     op = inference(MODEL_PATH,FILE_PATH,algo,df1,int(userid))
-    return '<br/>'.join(op)
+    return ','.join(op)
 
 @app.route('/')
 def index():
