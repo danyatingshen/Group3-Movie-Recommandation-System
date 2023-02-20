@@ -1,4 +1,4 @@
-[![This package is currently under development.](https://img.shields.io/badge/under-development-orange.svg)](https://github.com/sdhutchins/flask-demo)
+[![This package is currently under development.]
 
 # flask Group3-Movie-Recommandation-System
 
@@ -6,14 +6,12 @@
 
 In order to run this site, follow the instructions below:
 
-1. Download the [zip](https://github.com/sdhutchins/flask-demo/archive/master.zip)
-archive of this repository. OR clone the repository
+1. clone the repository: https://github.com/danyatingshen/Group3-Movie-Recommandation-System.git
 
-2. `cd flask-demo`
+2. `cd Group3-Movie-Recommandation-System`
 
-3. Change the ip in run.py to `localhost`
+3. Change the ip in run.py to `localhost` (to run locally) OR enter VM IP: `128.2.205.105`
 
-4. `python run.py`
+4. `python3 run.py`
 
-5. Go to your favorite web browser and type in `http://localhost:5000/`. From there,
-you can access this app.
+5. Go to your favorite web browser and type in `http://128.2.205.105:8082/recommend/<userid>`. (eg: http://128.2.205.105:8082/recommend/429223) View the movie recommendations.
