@@ -1,11 +1,14 @@
 from flask import Flask, render_template, redirect, url_for, request, session, abort, flash
+from .Inference.Inference import inference
 
 from app import app
-
+MODEL_PATH='app/Inference/model.pkl' #app/Inference/model.pkl
+FILE_PATH ='app/Inference/cleaned_data.csv'
 
 @app.route('/recommend/<userid>')
 def get_recommendation_by_userid(userid:int):
-    return "userId is: {}, movie: x,y,z".format(userid)
+    #return "userId is: {}, movie: x,y,z".format(userid)
+    return inference(MODEL_PATH,FILE_PATH,UID = userid)
 
 @app.route('/')
 def index():
