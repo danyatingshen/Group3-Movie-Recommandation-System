@@ -1,5 +1,3 @@
-[![This package is currently under development.]
-
 # flask Group3-Movie-Recommandation-System
 
 ## Running this site locally
