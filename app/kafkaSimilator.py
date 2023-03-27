@@ -3,6 +3,7 @@ from kafka import KafkaConsumer, KafkaProducer
 import time
 import re
 import datetime
+from data import *
 # movie stream
 topic = 'movielog3'
 scores_map = dict()
@@ -83,6 +84,9 @@ while True:
     for message in batch.values():
         for record in message:
             raw_data = record.value.decode()
+            check = data_quality_check(raw_data)
+            if check == 'Invalid message':
+                continue
             if '/data/m' in raw_data:
                 action_process(raw_data)
             elif 'recommendation request' in raw_data:
