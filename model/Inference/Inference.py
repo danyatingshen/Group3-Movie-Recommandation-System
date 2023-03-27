@@ -11,8 +11,8 @@ import surprise
 import pandas as pd
 import regex as re
 
-MODEL_PATH='app/Inference/knnmodel.pkl' 
-FILE_PATH ='app/Inference/cleaned_data.csv'
+MODEL_PATH='model/Inference/knnmodel.pkl' 
+FILE_PATH ='model/Inference/cleaned_data.csv'
 
 df1 = pd.read_csv(FILE_PATH) #loading the movie data to fetch from after inference
 algo = pkl.load(open(MODEL_PATH, 'rb')) #load these files in the Virtual Machine too
