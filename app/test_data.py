@@ -1,5 +1,5 @@
 import unittest
-from data import *
+from app.data import *
 
 class test_data_quality_check(unittest.TestCase):
     def test_nulls(self):
