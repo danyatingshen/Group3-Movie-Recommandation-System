@@ -42,11 +42,11 @@
             run: |
               cd $GITHUB_WORKSPACE
           
-          - name: Run data test file
+          - name: Run data quality test file
             run: |
               python -m unittest app/test_data.py
       
-          - name: Run data test file
+          - name: Run Inference test file
             run: |
               python -m unittest app/Inference/test_Inference.py
               
