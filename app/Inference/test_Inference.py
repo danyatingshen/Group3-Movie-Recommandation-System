@@ -1,5 +1,5 @@
 import unittest
-from Inference import *
+from app.Inference.Inference import *
 import pickle as pkl
 import surprise
 import pandas as pd
