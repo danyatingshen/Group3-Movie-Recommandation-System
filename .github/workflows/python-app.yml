@@ -1,0 +1,56 @@
+    name : PyTest
+    on: 
+      push:
+        branches:    
+          - m2/continuous-integration-impl
+    
+    jobs:
+      test:
+        runs-on: ${{matrix.os}}
+        strategy:
+          matrix: 
+            os: [ubuntu-latest, macOS-latest]
+        
+        steps:
+          - uses: actions/checkout@v2
+    
+          - uses: actions/setup-python@v2
+            with: 
+              python-version: "3.x"
+    
+          - name: Install pipenv
+            run: |
+              python -m pip install --upgrade pipenv wheel
+          - name: Install Pandas
+            run: |
+              pip install pandas
+          - name: Install pytest
+            run: |
+              pip install pytest
+              pip install coverage
+          - name: Install surprise
+            run: |
+              pip install surprise
+          - name: Install regex
+            run: |
+              pip install regex
+          - name: Install flask
+            run: |
+              pip install flask
+          
+          - name: Navigate
+            run: |
+              cd $GITHUB_WORKSPACE
+          
+          - name: Run data quality test file
+            run: |
+              python -m unittest app/test_data.py
+      
+          - name: Run Inference test file
+            run: |
+              python -m unittest app/Inference/test_Inference.py
+              
+          - name: Run coverage
+            run: |
+              python -m coverage run -m unittest
+              python -m coverage report
